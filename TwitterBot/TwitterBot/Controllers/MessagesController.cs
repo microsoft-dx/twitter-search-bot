@@ -14,19 +14,11 @@ namespace TwitterBot
     [BotAuthentication]
     public class MessagesController : ApiController
     {
-        /// <summary>
-        /// POST: api/Messages
-        /// Receive a message from a user and reply to it
-        /// </summary>
         public async Task<Message> Post([FromBody]Message message)
         {
             if (message.Type == "Message")
             {
-                // calculate something for us to return
-                int length = (message.Text ?? string.Empty).Length;
-
-                // return our reply to the user
-                return message.CreateReplyMessage($"You sent {length} characters");
+                return message.CreateReplyMessage(TwitterClient.GetTweets(message.Text));
             }
             else
             {
@@ -44,8 +36,6 @@ namespace TwitterBot
             }
             else if (message.Type == "DeleteUserData")
             {
-                // Implement user deletion here
-                // If we handle user deletion, return a real message
             }
             else if (message.Type == "BotAddedToConversation")
             {
