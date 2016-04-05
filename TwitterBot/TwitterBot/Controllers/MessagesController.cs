@@ -18,7 +18,9 @@ namespace TwitterBot
         {
             if (message.Type == "Message")
             {
-                return message.CreateReplyMessage(TwitterClient.GetTweets(message.Text));
+                LuisResponse luisResponse = await LuisClient.GetLuisResponse(message.Text);
+
+                return message.CreateReplyMessage((TwitterClient.GetTweets(luisResponse.Entities[0].EntityName)));
             }
             else
             {
