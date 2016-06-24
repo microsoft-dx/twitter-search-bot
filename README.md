@@ -3,7 +3,7 @@ Twitter Search Bot
 
 For a complete tutorial on how to build this bot using Microsoft Bot Framework and how to integrate it with Microsoft Cognitive Services,  [see this blog post.](https://radu.microsoft.pub.ro/how-to-build-a-twitter-search-bot-using-microsoft-bot-framework-and-cognitive-services/)
 
-To see a real demo of this bot, go to this website and create natural language queries. The queries will be processed by [LUIS](http://luis.ai) and if the intent is right, it will search Twitter using the entities it identified.
+To see a real demo of this bot, [go to this website and create natural language queries](http://twitter-search-bot.azurewebsites.net/bot.htm). The queries will be processed by [LUIS](http://luis.ai) and if the intent is right, it will search Twitter using the entities it identified.
 
 
 Building the solution
